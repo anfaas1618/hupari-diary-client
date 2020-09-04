@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,7 +18,7 @@ import com.example.huparidiary.MainActivity;
 import com.example.huparidiary.R;
 
 public class CategoryRedirect extends Fragment {
-
+  Button gotoact;
     private CategoryRedirectViewModel categoryRedirectViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -26,6 +27,13 @@ public class CategoryRedirect extends Fragment {
                 ViewModelProviders.of(this).get(CategoryRedirectViewModel.class);
         View root = inflater.inflate(R.layout.fragment_category, container, false);
         final TextView textView = root.findViewById(R.id.text_gallery);
+        gotoact=root.findViewById(R.id.gotocat);
+        gotoact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), MainActivity.class));
+            }
+        });
         categoryRedirectViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
@@ -38,6 +46,13 @@ public class CategoryRedirect extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         this.startActivity(new Intent(getContext(), MainActivity.class));
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
     }
 }
