@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:layout_gravity="center"
-            android:text="#rank"/>
+            android:text="@string/rating"/>
         <ImageView
             android:id="@+id/item_image"
             android:layout_width="match_parent"
@@ -48,13 +48,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25sp"
-            android:text="Contact details:"
+            android:text="@string/contDeatils"
             android:layout_marginBottom="20dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            android:text="address:"/>
+            android:text="@string/address"/>
         <TextView
             android:id="@+id/address_final"
             android:layout_width="wrap_content"
@@ -71,15 +71,16 @@
                android:layout_height="wrap_content"
                android:layout_gravity="center"
                android:background="#00E5FF"
-               android:text="call us "/>
+               android:text="@string/call"/>
+
            <Button
                android:id="@+id/btnlocation"
-               android:layout_margin="10dp"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_gravity="center"
+               android:layout_margin="10dp"
                android:background="#00E5FF"
-               android:text="open location in maps "/>
+               android:text="@string/maps" />
        </LinearLayout>
 
     </LinearLayout>
