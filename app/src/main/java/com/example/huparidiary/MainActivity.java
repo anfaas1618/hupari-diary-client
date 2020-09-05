@@ -32,6 +32,9 @@ import com.example.huparidiary.adapters.CatAdapter;
 import com.example.huparidiary.network.CategoryJson;
 import com.example.huparidiary.network.imageupload;
 import com.example.huparidiary.ui.CategoryUploadDialog;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -59,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int PICK_IMAGE = 1;
     Bitmap     bmp;
     boolean canDelete=false;
+    AdView mAdView;
 
  SwipeRefreshLayout swipeRefreshLayout;
     @Override
@@ -66,6 +70,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
+        MobileAds.initialize(this,"ca-app-pub-4847927719334423~2849100057");
+        mAdView = (AdView)findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
 
         recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
@@ -78,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Category Page");
         }
-        toolbar.setSubtitle("Category C hoose");
+        toolbar.setSubtitle("Category Choose");
         toolbar.inflateMenu(R.menu.menu);
         // use a linear layout manager
         layoutManager = new LinearLayoutManager(this);
