@@ -35,17 +35,10 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        loadLocale();
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-                Button changeLang = root.findViewById(R.id.changLan);
-        changeLang.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                showChangeLanguageDialog();
-            }
-        });
+
         return root;
     }
 
@@ -54,45 +47,5 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
     }
-    private void showChangeLanguageDialog() {
-        final String[] listItems = {"मराठी","English"};
-        AlertDialog.Builder mBuilder = new AlertDialog.Builder(getContext());
-        mBuilder.setTitle("Choose Language");
-        mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                if (i==0){
-                    setLocale("mr");
-                    getActivity().recreate();
-                }
-                else if (i==1){
-                    setLocale("en");
-                    getActivity().recreate();
-                }
-                dialogInterface.dismiss();
 
-            }
-        });
-
-        AlertDialog mDialog = mBuilder.create();
-
-        mDialog.show();
-    }
-    private void setLocale(String lang) {
-        Locale locale = new Locale(lang);
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.locale =  locale;
-        getActivity().getResources().updateConfiguration(config, getActivity().getResources().getDisplayMetrics());
-        //save data to shared preferences
-        SharedPreferences.Editor editor = getActivity().getSharedPreferences("Settings", MODE_PRIVATE).edit();
-        editor.putString("My_lang", lang);
-        editor.apply();
-    }
-
-    public void loadLocale(){
-        SharedPreferences prefs = getActivity().getSharedPreferences("Settings", MODE_PRIVATE);
-        String language = prefs.getString ("My_Lang","");
-        setLocale(language);
-    }
 }
