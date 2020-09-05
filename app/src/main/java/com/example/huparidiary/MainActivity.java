@@ -1,5 +1,6 @@
 package com.example.huparidiary;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,7 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -28,6 +32,9 @@ import com.example.huparidiary.adapters.CatAdapter;
 import com.example.huparidiary.network.CategoryJson;
 import com.example.huparidiary.network.imageupload;
 import com.example.huparidiary.ui.CategoryUploadDialog;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -36,6 +43,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
 
 import com.example.huparidiary.model.category;
@@ -54,12 +62,21 @@ public class MainActivity extends AppCompatActivity {
     public static final int PICK_IMAGE = 1;
     Bitmap     bmp;
     boolean canDelete=false;
+    AdView mAdView;
 
  SwipeRefreshLayout swipeRefreshLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+
+        MobileAds.initialize(this,"ca-app-pub-4847927719334423~2849100057");
+        mAdView = (AdView)findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+
         recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         swipeRefreshLayout = findViewById(R.id.swiperefreshcat);
         // use this setting to improve performance if you know that changes
@@ -68,9 +85,9 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.include);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle("category page");
+            getSupportActionBar().setTitle("Category Page");
         }
-        toolbar.setSubtitle("category choose");
+        toolbar.setSubtitle("Category Choose");
         toolbar.inflateMenu(R.menu.menu);
         // use a linear layout manager
         layoutManager = new LinearLayoutManager(this);
@@ -120,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new CatAdapter(this, myDataset);
         recyclerView.setAdapter(mAdapter);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
