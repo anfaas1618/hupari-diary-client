@@ -3,39 +3,35 @@
     <string name="title_activity_home">HomeActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Hupari Diary</string>
+    <string name="nav_header_title">हुपरी डायरी</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Category</string>
-    <string name="menu_slideshow">Contact us</string>
-    <string name="category">Category</string>
-    <string name="contact_us">Contact us</string>
+    <string name="menu_home">होम पेज</string>
+    <string name="menu_gallery">श्रेणी</string>
+    <string name="menu_slideshow">आमच्याशी संपर्क साधा</string>
+    <string name="category">श्रेणी</string>
+    <string name="contact_us">आमच्याशी संपर्क साधा</string>
     <string name="click_here_to_go_to_category">go to category</string>
-    <string name="toRegister">To Register into this App</string>
-    <string name="krishna">Krishnkant Powar</string>
-    <string name="calltoreg">Call to Register</string>
-    <string name="developerContact">Developer Details</string>
-    <string name="callDev">Call Developer</string>
+    <string name="toRegister">या अॅपमध्ये नोंदणी करण्यासाठी</string>
+    <string name="krishna">कृष्णकांत पोवार</string>
+    <string name="calltoreg">नोंदणी करण्यासाठी कॉल</string>
+    <string name="developerContact">विकसक तपशील</string>
+    <string name="callDev">विकासक कॉल करा</string>
 
     <string name="changLang">Change Language</string>
-    <string name="hupari">HUPARI </string>
-    <string name="info">Hupari is a census town in Kolhapur district in the Indian state of Maharashtra. Hupari comes under Hatkanangle taluka.
+    <string name="hupari">हुपरी </string>
+    <string name="info">हुपरी हे भारताच्या महाराष्ट्र राज्यातील कोल्हापूर जिल्ह्यातील एक जनगणना आहे. हुपरी हा हातकणंगले तालुक्यात येतो.हुपारी चांदीच्या दागिन्यांच्या उत्पादनासाठी प्रसिद्ध आहे. या शहरातील बहुतेक कुटुंबांमध्ये चांदीपासून कलात्मक दागदागिने विकसित करण्यासाठी वडिलोपार्जित कौशल्य आहे. </string>
+    <string name="country">देश: भारत</string>
+    <string name="state">राज्य: महाराष्ट</string>
+    <string name="city">जिल्हा: कोल्हापूर</string>
+    <string name="silver">भारताची चंदेरी नगरी : हुपरी</string>
 
-Hupari is famous for the production of silver ornaments. Most of the families in this city have ancestral skill for developing artistic ornaments from silver.
-
- </string>
-    <string name="country">Country : India </string>
-    <string name="state">State : Maharashtra</string>
-    <string name="city">"District : Kolhapur</string>
-    <string name="silver">THE SILVER CITY OF INDIA HUPARI</string>
-
-    <string name="contDeatils">Contact Details</string>
-    <string name="address">Address: </string>
-    <string name="call">CALL</string>
-    <string name="maps">MAP DIRECTION</string>
-    <string name="rating">Rating</string>
+    <string name="contDeatils">संपर्काची माहिती</string>
+    <string name="address">पत्ता</string>
+    <string name="call">कॉल करा</string>
+    <string name="maps">नकाशा डायरेक्शन</string>
+    <string name="rating">रेटिंग</string>
 
 
 
