@@ -21,17 +21,19 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.huparidiary.HomeActivity;
 import com.example.huparidiary.R;
 
-public class ContactUsFragment extends AppCompatActivity{
+public class ContactUsFragment extends Fragment{
     Button call,callDev;
     static int REQUEST_PHONE_CALL=1;
+
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_contact_us);
-        call=findViewById(R.id.callBtn);
-        callDev = findViewById(R.id.devBtn);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.fragment_contact_us, container, false);
+        call=root.findViewById(R.id.callBtn);
+        callDev = root.findViewById(R.id.devBtn);
         call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,11 +42,11 @@ public class ContactUsFragment extends AppCompatActivity{
                     startActivity(intent);
                 }catch (Exception e)
                 {
-                    Toast.makeText(ContactUsFragment.this, "[call error ] "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "[call error ] "+e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
-                if (ContextCompat.checkSelfPermission(ContactUsFragment.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions(ContactUsFragment.this, new String[]{Manifest.permission.CALL_PHONE},REQUEST_PHONE_CALL);
+                if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CALL_PHONE},REQUEST_PHONE_CALL);
                 }
                 else
                 {
@@ -61,11 +63,11 @@ public class ContactUsFragment extends AppCompatActivity{
                     startActivity(intent);
                 }catch (Exception e)
                 {
-                    Toast.makeText(ContactUsFragment.this, "[call error ] "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "[call error ] "+e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
-                if (ContextCompat.checkSelfPermission(ContactUsFragment.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions(ContactUsFragment.this, new String[]{Manifest.permission.CALL_PHONE},REQUEST_PHONE_CALL);
+                if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CALL_PHONE},REQUEST_PHONE_CALL);
                 }
                 else
                 {
@@ -74,6 +76,8 @@ public class ContactUsFragment extends AppCompatActivity{
                 }
             }
         });
-
+        return root;
     }
+
+
 }

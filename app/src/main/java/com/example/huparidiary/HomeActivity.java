@@ -31,17 +31,10 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        loadLocale();
+
 
         setContentView(R.layout.activity_home);
 
-        Button changeLang = findViewById(R.id.changLan);
-        changeLang.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                showChangeLanguageDialog();
-            }
-        });
 
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -57,51 +50,12 @@ public class HomeActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+
     }
 
 
-    private void showChangeLanguageDialog() {
-        final String[] listItems = {"मराठी","English"};
-        AlertDialog.Builder mBuilder = new AlertDialog.Builder(HomeActivity.this);
-        mBuilder.setTitle("Choose Language");
-        mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                if (i==0){
-                    setLocale("mr");
-                    recreate();
-                }
-                else if (i==1){
-                    setLocale("en");
-                    recreate();
-                }
-                dialogInterface.dismiss();
 
-            }
-        });
-
-        AlertDialog mDialog = mBuilder.create();
-
-        mDialog.show();
-    }
-
-    private void setLocale(String lang) {
-        Locale locale = new Locale(lang);
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.locale =  locale;
-        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
-        //save data to shared preferences
-        SharedPreferences.Editor editor = getSharedPreferences("Settings", MODE_PRIVATE).edit();
-        editor.putString("My_lang", lang);
-        editor.apply();
-    }
-
-    public void loadLocale(){
-        SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
-        String language = prefs.getString ("My_Lang","");
-        setLocale(language);
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
