@@ -28,6 +28,8 @@ import com.android.volley.toolbox.Volley;
 import com.example.huparidiary.model.items;
 import com.example.huparidiary.network.ItemsJson;
 import com.example.huparidiary.network.LocationJson;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
@@ -44,6 +46,7 @@ import java.io.Serializable;
 import java.util.Locale;
 
 import static android.Manifest.permission.CALL_PHONE;
+import static com.example.huparidiary.ItemsActivity.mInterstitialAd;
 
 public class ItemDetailActivity extends AppCompatActivity {
   TextView name,rank,address;
@@ -64,11 +67,15 @@ public class ItemDetailActivity extends AppCompatActivity {
         contactBtn=findViewById(R.id.contact);
         locationBtn=findViewById(R.id.btnlocation);
         ratingBar=findViewById(R.id.rating);
-
         // To retrieve object in second Activity
      item=  (items)  getIntent().getSerializableExtra("MyClass");
     name.setText(item.getName());
     rank.setText(item.getRanks());
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        } else {
+            Log.d("TAG", "The interstitial wasn't loaded yet.");
+        }
     address.setText(item.getAddress());
     Picasso.get().load(item.getImage()).into(image);
     ratingBar.setRating(Float.parseFloat(item.getStars()));

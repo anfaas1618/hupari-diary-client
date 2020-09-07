@@ -34,6 +34,8 @@ import com.example.huparidiary.network.ItemsJson;
 import com.example.huparidiary.network.imageupload;
 import com.example.huparidiary.ui.CategoryUploadDialog;
 import com.example.huparidiary.ui.ItemUploadDialog;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -53,6 +55,7 @@ import org.jsoup.nodes.Document;
 public class ItemsActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
+
     private Toolbar toolbar;
     private RecyclerView.LayoutManager layoutManager;
     String url="https://mibtechnologies.in/hupariapp/db_item_upload.php?catnamewa=sqlrank";
@@ -60,6 +63,7 @@ public class ItemsActivity extends AppCompatActivity {
     public static final int PICK_IMAGE = 1;
     Bitmap     bmp;
     boolean canDelete=false;
+    public static InterstitialAd mInterstitialAd;
 public static ProgressBar bar;
      String catName;
     SwipeRefreshLayout swipeRefreshLayout;
@@ -68,6 +72,9 @@ public static ProgressBar bar;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_items);
         bar =findViewById(R.id.pBar);
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-4847927719334423/3520937911");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
         recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         Intent intent =getIntent();
     catName=    intent.getStringExtra("CATNAME");
