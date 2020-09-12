@@ -7,158 +7,180 @@
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
     android:orientation="vertical">
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/categoryname"
-            android:textStyle="bold"
-            android:fontFamily="cursive"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="++         add item        ++"
-            android:layout_marginBottom="14dp"
-            android:textSize="40sp" />
-
-        <TextView
-            android:id="@+id/scoreLabelDialog"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:text=" name"
-            android:textSize="25sp" />
-
-        <EditText
-            android:id="@+id/item_Name_dialog"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="enter the category name"/>
-
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
             <TextView
+                android:id="@+id/categoryname"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="17dp"
-                android:text="chose image"/>
-            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_gravity="center"
+                android:text="Add Item"
+                android:layout_marginBottom="14dp"
+                android:textSize="40sp" />
+
+            <TextView
+                android:id="@+id/scoreLabelDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text=" Name"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/item_Name_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter the Category Name"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17dp"
+                    android:text="Choose Image"/>
+                <androidx.coordinatorlayout.widget.CoordinatorLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/itemImage_dialog"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:src="@drawable/ic_baseline_image_24" />
+                </androidx.coordinatorlayout.widget.CoordinatorLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Phone Number"
+                    android:textSize="20dp"/>
+                <EditText
+                    android:id="@+id/phoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:hint="Enter Phone Number"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Email Id"
+                    android:textSize="20dp"/>
+                <EditText
+                    android:id="@+id/emailId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:hint="Enter Email-Id"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Description"
+                    android:textSize="20dp"/>
+                <EditText
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:hint="Enter Description"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Rating"/>
+                <RatingBar
+                    android:id="@+id/ratingbar_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rank"
+                    android:textSize="20dp"/>
+                <EditText
+                    android:id="@+id/rank"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Rank"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Address"
+                    android:textSize="20dp"/>
+                <EditText
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Address"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="Status"/>
+                <RadioGroup
+                    android:id="@+id/status_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="10dp"
+                    >
+                    <RadioButton
+                        android:id="@+id/status_open"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="Open"/>
+                    <RadioButton
+                        android:id="@+id/status_closed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Closed"/>
+                </RadioGroup>
+
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <ImageView
-                    android:id="@+id/itemImage_dialog"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:src="@drawable/ic_android_black_24dp" />
-            </androidx.coordinatorlayout.widget.CoordinatorLayout>
-          <TextView
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:text="phone number"
-              android:textSize="20dp"/>
-            <EditText
-                android:id="@+id/phoneNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:hint="enter phone number"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="stars"/>
-            <RatingBar
-                android:id="@+id/ratingbar_item"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="rank"
-                android:textSize="20dp"/>
-            <EditText
-                android:id="@+id/rank"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="rank"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="address"
-                android:textSize="20dp"/>
-            <EditText
-                android:id="@+id/address"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="address"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-android:text="status"/>
-     <RadioGroup
-         android:id="@+id/status_item"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:orientation="horizontal"
-         android:layout_margin="10dp"
-         >
-         <RadioButton
-             android:id="@+id/status_open"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginRight="10dp"
-             android:text="open"/>
-         <RadioButton
-             android:id="@+id/status_closed"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:text="closed"/>
-     </RadioGroup>
+                <Button
+                    android:id="@+id/btn_save_item_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_weight="2"
+                    android:background="#651FFF"
+                    android:backgroundTint="#F50057"
+                    android:gravity="center"
+                    android:text="save"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
 
+                <Button
+                    android:id="@+id/btn_cancel_item_dialog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="2"
+                    android:background="#651FFF"
+                    android:backgroundTint="#F50057"
+                    android:gravity="center"
+                    android:text="cancel"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/btn_save_item_dialog"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_weight="2"
-                android:background="#651FFF"
-                android:backgroundTint="#F50057"
-                android:gravity="center"
-                android:text="save"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF" />
-
-            <Button
-                android:id="@+id/btn_cancel_item_dialog"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginLeft="20dp"
-                android:layout_weight="2"
-                android:background="#651FFF"
-                android:backgroundTint="#F50057"
-                android:gravity="center"
-                android:text="cancel"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
-    </LinearLayout>
-
-</ScrollView>
+    </ScrollView>
 
 
 
