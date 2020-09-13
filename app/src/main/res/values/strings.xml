@@ -30,6 +30,9 @@
     <string name="contDeatils">संपर्काची माहिती</string>
     <string name="address">पत्ता</string>
     <string name="call">कॉल करा</string>
+    <string name="email">ई-मेल</string>
+    <string name="description">माहिती </string>
+
     <string name="maps">नकाशा डायरेक्शन</string>
     <string name="rating">रेटिंग</string>
 

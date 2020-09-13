@@ -120,7 +120,7 @@ public static ProgressBar bar;
                 ItemsJson[] itemsJsons = gson1.fromJson(response, ItemsJson[].class);
                 for (ItemsJson itemJson : itemsJsons) {
                     Log.i("TAG", "onResponse: " + itemJson.getName());
-                    items item = new items(itemJson.getName(),itemJson.getStars(),itemJson.getRatings(),itemJson.getRanks(),itemJson.getAddress(),
+                    items item = new items(itemJson.getName(),itemJson.getStars(),itemJson.getEmail(),itemJson.getDescription(),itemJson.getRatings(),itemJson.getRanks(),itemJson.getAddress(),
                                             itemJson.getPhone(),itemJson.getStatus(),itemJson.getImage(),catName);
                     myDataset.add(item);
                 }
@@ -185,7 +185,7 @@ public static ProgressBar bar;
                 ItemsJson[] itemsJsons = gson1.fromJson(response, ItemsJson[].class);
                 for (ItemsJson itemJson : itemsJsons) {
                     Log.i("TAG", "onResponse: " + itemJson.getName());
-                    items item = new items(itemJson.getName(),itemJson.getStars(),itemJson.getRatings(),itemJson.getRanks(),itemJson.getAddress(),
+                    items item = new items(itemJson.getName(),itemJson.getStars(),itemJson.getEmail(),itemJson.getDescription(),itemJson.getRatings(),itemJson.getRanks(),itemJson.getAddress(),
                             itemJson.getPhone(),itemJson.getStatus(),itemJson.getImage(),catName);
                     myDataset.add(item);
                 }

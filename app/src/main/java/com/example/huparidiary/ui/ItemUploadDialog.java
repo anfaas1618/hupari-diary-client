@@ -23,6 +23,8 @@ public class ItemUploadDialog  extends Dialog {
     public RatingBar ratingBar;
     String rating;
    public RadioGroup radiostatus;
+    public EditText emailId;
+    public EditText description;
     public EditText rank;
     public  EditText address;
     public static ImageView itemImage;
@@ -42,6 +44,8 @@ public  RadioButton radioButton_status;
         phoneNumber=findViewById(R.id.phoneNumber);
         ratingBar=findViewById(R.id.ratingbar_item);
         rank =findViewById(R.id.rank);
+        emailId=findViewById(R.id.emailId);
+        description=findViewById(R.id.description);
         address =findViewById(R.id.address);
         catSaveBtn=findViewById(R.id.btn_save_item_dialog);
         catCancelBtn=findViewById(R.id.btn_cancel_item_dialog);

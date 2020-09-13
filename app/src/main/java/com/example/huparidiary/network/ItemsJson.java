@@ -9,6 +9,10 @@ public class ItemsJson {
     @SerializedName("name")
     @Expose
     private String name;
+    @Expose
+    private String email;
+    @Expose
+    private String description;
     @SerializedName("stars")
     @Expose
     private String stars;
@@ -34,6 +38,12 @@ public class ItemsJson {
     public String getName() {
         return name;
     }
+    public String getEmail() {
+        return name;
+    }
+    public String getDescription() {
+        return name;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -41,6 +51,13 @@ public class ItemsJson {
 
     public String getStars() {
         return stars;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public void setStars(String stars) {
