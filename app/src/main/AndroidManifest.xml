@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.huparidiary">
+    package="com.mibtech.huparidiary">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
@@ -19,7 +19,7 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-4847927719334423~2849100057"/>
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name="com.mibtech.huparidiary.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,14 +27,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".HomeActivity"
+            android:name="com.mibtech.huparidiary.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
-        <activity android:name=".ItemDetailActivity" />
-        <activity android:name=".ItemsActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name="com.mibtech.huparidiary.ItemDetailActivity" />
+        <activity android:name="com.mibtech.huparidiary.ItemsActivity" />
+        <activity android:name="com.mibtech.huparidiary.MainActivity"></activity>
     </application>
 
 </manifest>

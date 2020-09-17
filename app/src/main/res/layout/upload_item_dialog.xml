@@ -56,7 +56,7 @@
                         android:id="@+id/itemImage_dialog"
                         android:layout_width="match_parent"
                         android:layout_height="200dp"
-                        android:src="@drawable/ic_baseline_image_24" />
+                        android:src="@drawable/background" />
                 </androidx.coordinatorlayout.widget.CoordinatorLayout>
                 <TextView
                     android:layout_width="match_parent"

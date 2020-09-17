@@ -1,5 +1,5 @@
 
-package com.example.huparidiary;
+package com.mibtech.huparidiary;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
