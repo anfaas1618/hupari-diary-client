@@ -70,7 +70,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="25sp"
             android:text="@string/address"/>
         <TextView
             android:id="@+id/address_final"
@@ -87,6 +87,7 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_gravity="center"
+               android:gravity="center"
                android:background="#00E5FF"
                android:text="@string/call"/>
 
@@ -95,6 +96,7 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_gravity="center"
+               android:gravity="center"
                android:layout_margin="10dp"
                android:background="#00E5FF"
                android:text="@string/maps" />
