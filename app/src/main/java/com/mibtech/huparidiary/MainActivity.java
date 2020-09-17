@@ -12,6 +12,8 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -47,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
     public static final int PICK_IMAGE = 1;
     Bitmap     bmp;
     boolean canDelete=false;
+    ProgressBar bar;
+
     AdView mAdView;
 
  SwipeRefreshLayout swipeRefreshLayout;
@@ -75,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().setTitle("Category Page");
         }
         toolbar.setSubtitle("Category Choose");
+        bar=findViewById(R.id.pbar1);
         toolbar.inflateMenu(R.menu.menu);
         // use a linear layout manager
         layoutManager = new LinearLayoutManager(this);
@@ -110,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
                     myDataset.add(cat);
                     i++;
                 }
+                bar.setVisibility(View.GONE);
                 mAdapter.notifyDataSetChanged();
             }
         }, new Response.ErrorListener() {
@@ -123,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
         // specify an adapter (see also next example)
         mAdapter = new CatAdapter(this, myDataset);
         recyclerView.setAdapter(mAdapter);
+
     }
 
     @Override
@@ -192,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new CatAdapter(this,myDataset);
         recyclerView.setAdapter(mAdapter);
 
-
+       bar.setVisibility(View.GONE);
         swipeRefreshLayout.setRefreshing(false); // Disables the refresh icon
 
     }

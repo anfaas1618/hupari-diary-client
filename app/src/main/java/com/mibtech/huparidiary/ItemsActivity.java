@@ -12,6 +12,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
 import android.widget.ProgressBar;
 
 import com.android.volley.RequestQueue;
@@ -108,6 +109,7 @@ public static ProgressBar bar;
                     myDataset.add(item);
                 }
                 mAdapter.notifyDataSetChanged();
+                bar.setVisibility(View.GONE);
             }
         }, new Response.ErrorListener() {
             @Override
@@ -188,7 +190,7 @@ public static ProgressBar bar;
         // specify an adapter (see also next example)
         mAdapter = new itemAdapter(this,myDataset,catName);
         recyclerView.setAdapter(mAdapter);
-
+bar.setVisibility(View.GONE);
 
         swipeRefreshLayout.setRefreshing(false); // Disables the refresh icon
 

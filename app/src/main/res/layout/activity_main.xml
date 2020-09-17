@@ -38,6 +38,16 @@
 
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+
+    <ProgressBar
+        android:id="@+id/pbar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginEnd="17dp"
+        android:background="@drawable/progresswa" />
+
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
